@@ -17,7 +17,7 @@ MEM_USAGE="${USED_RAM}/${FREE_RAM}MB (${USED_RAM_PERCENT}%)"
 DISK_USAGE="${USED_DISK}/${FREE_DISK}Gb (${USED_DISK_PERCENT}%)"
 CPU_LOAD=$(top -bn1 | grep '^%Cpu' | cut -c 9- | xargs | awk '{printf("%.1f%%"), $1 + $3}')
 LAST_BOOT=$(who -b | awk '$1 == "system" {print $3 " " $4}')
-LVM_USE=$(if [ NUMS_OF_LVM -eq 0 ]; then echo no; else echo yes; fi)
+LVM_USE=$(if [ $NUMS_OF_LVM -eq 0 ]; then echo no; else echo yes; fi)
 # Run [sudo apt install net-tools] to this works
 CONNECTIONS_TCP=$(cat /proc/net/sockstat{,6} | awk '$1 == "TCP:" {print $3}')
 USER_LOG=$(users | wc -w)
