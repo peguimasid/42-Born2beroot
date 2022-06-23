@@ -24,15 +24,15 @@ USER_LOG=$(users | wc -w)
 NETWORK="IP $(hostname -I) $(ip link show | awk '$1 == "link/ether" {print $2}')"
 SUDO=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 
-echo "	#Architecture: ${ARCHITECTURE}"
-echo "	#CPU physical: ${CPU_PHYSICAL}"
-echo "	#vCPU: ${V_CPU}"
-echo "	#Memory Usage: ${MEM_USAGE}"
-echo "	#Disk Usage: ${DISK_USAGE}"
-echo "	#CPU load: ${CPU_LOAD}"
-echo "	#Last boot: ${LAST_BOOT}"
-echo "	#LVM use: ${LVM_USE}"
-echo "	#Connections TCP: ${CONNECTIONS_TCP} ESTABLISHED"
-echo "	#User log: ${USER_LOG}"
-echo "	#Network: ${NETWORK}"
-echo "	#Sudo: ${SUDO} cmd"
+echo "	#Architecture: ${ARCHITECTURE}
+	#CPU physical: ${CPU_PHYSICAL}
+	#vCPU: ${V_CPU}
+	#Memory Usage: ${MEM_USAGE}
+	#Disk Usage: ${DISK_USAGE}
+	#CPU load: ${CPU_LOAD}
+	#Last boot: ${LAST_BOOT}
+	#LVM use: ${LVM_USE}
+	#Connections TCP: ${CONNECTIONS_TCP} ESTABLISHED
+	#User log: ${USER_LOG}
+	#Network: ${NETWORK}
+	#Sudo: ${SUDO} cmd"
