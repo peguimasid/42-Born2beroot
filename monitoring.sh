@@ -21,7 +21,7 @@ LVM_USE=$(if [ $NUMS_OF_LVM -eq 0 ]; then echo no; else echo yes; fi)
 # Run [sudo apt install net-tools] to this works
 CONNECTIONS_TCP=$(cat /proc/net/sockstat{,6} | awk '$1 == "TCP:" {print $3}')
 USER_LOG=$(users | wc -w)
-NETWORK="IP $(hostname -I) $(ip link show | awk '$1 == "link/ether" {print $2}')"
+NETWORK="IP $(hostname -I) ($(ip link show | awk '$1 == "link/ether" {print $2}'))"
 SUDO=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 
 echo "	#Architecture: ${ARCHITECTURE}
