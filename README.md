@@ -13,7 +13,7 @@
 ## Install
 
 ```sh
-https://github.com/peguimasid/42-Born2beroot.git b2br
+git clone https://github.com/peguimasid/42-Born2beroot.git b2br
 ```
 
 ## Run (only tried in debian OS)
